@@ -54,3 +54,4 @@ export default defineConfig({
     outDir: 'dist',              // ✅ precisa ser 'dist'
   },
   // o bloco "server" é só
+
