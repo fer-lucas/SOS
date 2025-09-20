@@ -19,24 +19,39 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 18        # estável p/ Vite
+          node-version: 18
 
-      - run: npm install --legacy-peer-deps --no-audit --no-fund
-      - run: npm run build
+      # 🔎 Diagnóstico: ver arquivos no root e confirmar package.json
+      - name: Show repo files
+        run: |
+          pwd
+          ls -la
+          echo "---- package.json (head) ----"
+          head -n 60 package.json || true
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      # Instalação tolerante (sem lockfile)
+      - name: Install deps
+        run: npm install --legacy-peer-deps --no-audit --no-fund --loglevel=warn
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-      - id: deployment
+
+      - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4
-
-
-      - id: deployment
-        uses: actions/deploy-pages@v4
-
