@@ -19,21 +19,22 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
-      - run: npm install --legacy-peer-deps --no-audit --no-fund
+      - run: npm ci
       - run: npm run build
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3   # ⬅️ atualizado (usa upload-artifact v4)
+      # artefato atualizado ✅
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./dist
+
       - id: deployment
-        uses: actions/deploy-pages@v4           # ⬅️ atualizado
+        uses: actions/deploy-pages@v4
+
