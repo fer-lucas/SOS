@@ -1,0 +1,49 @@
+{
+  "name": "sos-symbol-open-system",
+  "version": "1.0.3",
+  "description": "SOS — Symbol Open System: Bússola simbiótica para organização pessoal",
+  "homepage": "https://fer-lucas.github.io/SOS/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fer-lucas/SOS.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "motion": "latest",
+    "lucide-react": "latest",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-slot": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "keywords": [
+    "sos",
+    "symbol-open-system",
+    "design-system",
+    "organization",
+    "productivity",
+    "react",
+    "tailwind"
+  ],
+  "author": "fer-lucas",
+  "license": "MIT"
+}
