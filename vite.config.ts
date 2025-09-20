@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 
 export default defineConfig({
-  base: '/SOS/',                 // ✅ caminho base do GitHub Pages
+  // GitHub Pages serve em /<repo>/ → precisa desse base
+  base: '/SOS/',
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -51,7 +52,7 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    outDir: 'dist',              // ✅ precisa ser 'dist'
+    outDir: 'dist', // pasta que o workflow publica
   },
-  // o bloco "server" é só
-
+  // o bloco "server" (dev) é opcional; não impacta o Pages
+})
