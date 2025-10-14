@@ -1,77 +1,15 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>SOS v2.0 — Início</title>
-  <meta name="description" content="SOS · Symbol Open System"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/tokens.css"/>
-  <link rel="stylesheet" href="./assets/css/base.css"/>
-  <script defer src="./assets/js/main.js"></script>
-</head>
-<body>
-  <header class="header">
-    <div class="brand"><div class="brand-badge"></div><span>SOS</span></div>
-    <nav class="nav">
-      <a href="./index.html">Início</a>
-      <a href="./prompts.html">/prompts</a>
-      <a href="./guardioes/farol.html">Farol △</a>
-      <a href="./guardioes/iris.html">Íris ◎</a>
-      <a href="./guardioes/joaquina.html">Joaquina ▼</a>
-      <a href="./guardioes/lume.html">Lume ◯</a>
-      <a href="./guardioes/mira.html">Mira ◇</a>
-      <a href="./guardioes/nexo.html">Nexo ⦿</a>
-      <a href="./guardioes/trino.html">Trino ∴</a>
-      <a href="./correntes/sorte.html">Sorte 🌬️</a>
-    </nav>
-  </header>
-  <main>
 
-<section class="hero">
-  <h1>SOS v2.0 — Symbol Open System</h1>
-  <p>Manual pessoal vivo com guardiões, correntes transversais e biblioteca de prompts. P&B com ≤20% acento, Manrope.</p>
-</section>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>SOS v2.0 Visual Project</title>
+    </head>
 
-<section>
-  <h2>Guardiões</h2>
-  <div class="grid">
-    <a class="card guard-halo guard-farol" href="./guardioes/farol.html"><div class="guard-title"><span class="guard-dot"></span><h3>Farol △</h3></div><p>Forma · Direção visual, hierarquia, grid.</p><span class="badge">cor: var(--farol)</span></a>
-    <a class="card guard-halo guard-iris" href="./guardioes/iris.html"><div class="guard-title"><span class="guard-dot"></span><h3>Íris ◎</h3></div><p>Vínculo · Integração e linguagem.</p><span class="badge">cor: var(--iris)</span></a>
-    <a class="card guard-halo guard-joaquina" href="./guardioes/joaquina.html"><div class="guard-title"><span class="guard-dot"></span><h3>Joaquina ▼</h3></div><p>Limite · Escopo, validação, duplo‑ok.</p><span class="badge">cor: var(--joaquina)</span></a>
-    <a class="card guard-halo guard-lume" href="./guardioes/lume.html"><div class="guard-title"><span class="guard-dot"></span><h3>Lume ◯</h3></div><p>Balanço · Cadência, pausas, alertas.</p><span class="badge">cor: var(--lume)</span></a>
-    <a class="card guard-halo guard-mira" href="./guardioes/mira.html"><div class="guard-title"><span class="guard-dot"></span><h3>Mira ◇</h3></div><p>Espelho · Autoanálise, diagnóstico, síntese.</p><span class="badge">cor: var(--mira)</span></a>
-    <a class="card guard-halo guard-nexo" href="./guardioes/nexo.html"><div class="guard-title"><span class="guard-dot"></span><h3>Nexo ⦿</h3></div><p>Trama · Narrativa, logs, releases e costura.</p><span class="badge">cor: var(--nexo)</span></a>
-    <a class="card guard-halo guard-trino" href="./guardioes/trino.html"><div class="guard-title"><span class="guard-dot"></span><h3>Trino ∴</h3></div><p>Lógica · Estrutura, taxonomias, decisão replicável.</p><span class="badge">cor: var(--trino)</span></a>
-  </div>
-</section>
-
-<section style="margin-top:28px;">
-  <h2>Correntes Transversais</h2>
-  <div class="card corrente" style="--c: var(--nexo);">
-    <h3>Sorte 🌬️</h3>
-    <p>Vertical: Trama (transversal) · Faceta: Ocasionalidade · Função: expandir probabilidades onde já existe movimento.</p>
-    <ul>
-      <li><strong>Radar de Sorte:</strong> logue eventos de acaso favorável.</li>
-      <li><strong>Ritual simbiótico:</strong> “abro espaço para a sorte trabalhar comigo”.</li>
-      <li><strong>Log do inesperado:</strong> momentos em que a sorte alterou o rumo.</li>
-    </ul>
-    <a class="tag" href="./correntes/sorte.html">ver página</a>
-  </div>
-</section>
-
-<section style="margin-top:28px;">
-  <h2>Biblioteca /prompts</h2>
-  <p>Templates-mãe do KIT-SOS com 5 modelos base.</p>
-  <div class="card"><a href="./prompts.html" class="badge">abrir biblioteca</a></div>
-</section>
-
-  </main>
-  <footer class="footer">
-    <div>SOS v2.0 • 3SRM: <span class="kbd">Simples</span> <span class="kbd">Seguro</span> <span class="kbd">Sustentável</span> <span class="kbd">Relevante</span> <span class="kbd">Memorável</span></div>
-    <div>Paleta P&B + ≤20% acento</div>
-  </footer>
-</body>
-</html>
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+    </body>
+  </html>
+  
