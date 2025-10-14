@@ -1,0 +1,14 @@
+:root {
+  --bg-light: #FFFFFF;
+  --bg-dark: #0D0D10;
+  --text-light: #111111;
+  --text-dark: #F2F2F4;
+  --accent: #0A84FF;
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+body { margin: 0; padding: 0; background: var(--bg-light); color: var(--text-light); font-size: 16px; }
+header, footer { padding: 1em; text-align: center; background: var(--accent); color: white; }
+nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1em; padding: 0; }
+nav a { color: white; text-decoration: none; font-weight: 600; }
+section { text-align: center; padding: 2em; }
+img { border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
