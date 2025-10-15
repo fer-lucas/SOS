@@ -1,11 +1,10 @@
 name: Deploy SOS v2.0 RC+1 to GitHub Pages
 
-# 🔹 Define quando o workflow deve rodar
 on:
   push:
     branches:
-      - main  # dispara sempre que houver push na main
-  workflow_dispatch:  # permite rodar manualmente pela aba Actions
+      - main
+  workflow_dispatch: # permite rodar manualmente
 
 jobs:
   build:
@@ -21,20 +20,23 @@ jobs:
         with:
           node-version: 18
 
+      # Corrigido: usa npm install (não requer package-lock.json)
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
+      # Build do projeto Vite
       - name: Build project
         run: npm run build
 
+      # Evita que o GitHub Pages use Jekyll
       - name: Disable Jekyll
         run: echo "" > dist/.nojekyll
 
+      # Publicação automática na branch gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          commit_message: "Deploy SOS v2.0 RC+1 build via GitHub Action"
-
+          commit_message: "🚀 Deploy automático SOS v2.0 RC+1"
