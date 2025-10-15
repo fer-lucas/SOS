@@ -3,8 +3,13 @@
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
 
-  export default defineConfig({
-    plugins: [react()],
+export default defineConfig({
+  // Base path to ensure assets load correctly when deployed on a sub-path like GitHub Pages.
+  // When using GitHub Pages, the site is served from https://username.github.io/repo-name/,
+  // so Vite must prepend this repo name to all static asset URLs.  Adjust this value
+  // anytime the repository name changes.
+  base: '/SOS/',
+  plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
@@ -49,10 +54,14 @@
         '@': path.resolve(__dirname, './src'),
       },
     },
-    build: {
-      target: 'esnext',
-      outDir: 'build',
-    },
+  build: {
+    // Compile targets modern browsers; adjust if you need to support older ones.
+    target: 'esnext',
+    // Output directory for the static site.  GitHub Pages publishes from this folder.
+    // Changing to `dist` aligns with common conventions and allows the build step to
+    // integrate cleanly with the GitHub Pages action defined in the workflow.
+    outDir: 'dist',
+  },
     server: {
       port: 3000,
       open: true,
