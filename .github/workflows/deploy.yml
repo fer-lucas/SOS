@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # permite rodar manualmente
+  workflow_dispatch:
+
+permissions:
+  contents: write  # 🔑 permite criar/atualizar a branch gh-pages
 
 jobs:
   build:
@@ -20,19 +23,15 @@ jobs:
         with:
           node-version: 18
 
-      # Corrigido: usa npm install (não requer package-lock.json)
       - name: Install dependencies
         run: npm install
 
-      # Build do projeto Vite
       - name: Build project
         run: npm run build
 
-      # Evita que o GitHub Pages use Jekyll
       - name: Disable Jekyll
         run: echo "" > dist/.nojekyll
 
-      # Publicação automática na branch gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
